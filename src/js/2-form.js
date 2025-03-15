@@ -9,7 +9,6 @@ let onFormSubmit = function (evt) {
   evt.preventDefault();
   let emailValue = this.elements.email.value.trim();
   let messageValue = this.elements.message.value.trim();
-
   let formIsNotFilled = !emailValue || !messageValue;
   if (formIsNotFilled) {
     alert('Fill please all fields');
@@ -19,6 +18,10 @@ let onFormSubmit = function (evt) {
       message: messageValue,
     });
     localStorage.removeItem(storageKeyForFormData);
+    formData = {
+      email: '',
+      message: '',
+    };
     this.reset();
   }
 };

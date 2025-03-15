@@ -77,19 +77,6 @@ function addGalleryItemEl(img) {
       </a>
     </li>`;
 }
-function showOriginalImage(event) {
-  let targetEl = event.target;
-  if (targetEl.className !== 'gallery-image') {
-    return;
-  }
-  event.preventDefault();
-  let imgPreviewEl = targetEl.cloneNode(true);
-  imgPreviewEl.src = imgPreviewEl.dataset.source;
-  const instance = basicLightbox.create(imgPreviewEl.outerHTML);
-
-  instance.show();
-}
-
 let imageObjects = images.map(image => {
   return addGalleryItemEl(image);
 });
